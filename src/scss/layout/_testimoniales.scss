@@ -3,12 +3,11 @@
     font-size: 2.4rem;
     padding: 2rem;
     color: $blanco;
-    border-radius: 2rem;    
+    border-radius: 2rem;
 
     blockquote {
         padding-left: 5rem;
         position: relative;
-
 
         &::before {
             content: '';
@@ -16,14 +15,15 @@
             background-repeat: no-repeat;
             width: 6rem;
             height: 8rem;
-            display: block;
+            display: block; //Para que aparezca la imagen en pantalla, sino, no se vería
             position: absolute;
             left: -2rem;
-        }
+        }    
     }
 
     p {
         text-align: right;
         color: $blanco;
+        margin: -1rem;
     }
 }

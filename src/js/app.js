@@ -1,23 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-
     eventListeners();
+
     darkMode();
 });
 
 function darkMode() {
+    const prefiereDarkMode = window.matchMedia('(prefers-color.sheme: dark)'); //Leerá si el usuario prefiere modo claro u oscuro en su dispositivo. matches=true será modo oscuro y false modo claro
+    //console.log(prefiereDarkMode.matches);
 
-    const prefiereDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // console.log(prefiereDarkMode.matches);
-
-    if(prefiereDarkMode.matches) {
+    if (prefiereDarkMode.matches) { //Si el usuario tiene modo oscuro activo en su SO
         document.body.classList.add('dark-mode');
-    } else {
+    } else { //Si el usuario tiene modo claro activo en su SO:
         document.body.classList.remove('dark-mode');
     }
 
-    prefiereDarkMode.addEventListener('change', function() {
-        if(prefiereDarkMode.matches) {
+    //Si usuario cambio el modo con la página abierta, sin necesidad de recargar, cambiará de modo automáticamente
+    prefiereDarkMode.addEventListener('change', function() { 
+        if (prefiereDarkMode.matches) {
             document.body.classList.add('dark-mode');
         } else {
             document.body.classList.remove('dark-mode');
@@ -25,45 +24,27 @@ function darkMode() {
     });
 
     const botonDarkMode = document.querySelector('.dark-mode-boton');
+
     botonDarkMode.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
     });
 }
 
 function eventListeners() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    mobileMenu.addEventListener('click', navegacionResponsive);
+    const mobileMenu = document.querySelector('.mobile-menu'); //Con esto selecciona la clase
 
-    const metodoContacto = document.querySelectorAll('input[name="contacto[contacto]"]');
-    metodoContacto.forEach(input => input.addEventListener('click', seleccionarMetodo));
+    mobileMenu.addEventListener('click', navegacionResponsive); //Registra evento de click en funcion navegacionResponsive
 }
 
 function navegacionResponsive() {
     const navegacion = document.querySelector('.navegacion');
 
-    navegacion.classList.toggle('mostrar')
-}
+    // if (navegacion.classList.contains('mostrar')) {
+    //     navegacion.classList.remove('mostrar');
+    // } else {
+    //     navegacion.classList.add('mostrar');
+    // }
 
-function seleccionarMetodo(e) {
-    const contactoDiv = document.querySelector('#contacto');
+    navegacion.classList.toggle('mostrar') //Este código hace lo mismo que el comentado arriba, pero más pro
 
-
-    if(e.target.value === 'telefono') {
-        contactoDiv.innerHTML = `
-            <label for="telefono">Teléfono</label>
-            <input type="tel" placeholder="Tu Teléfono" id="telefono"  name="contacto[telefono]" required>
-
-            <label for="fecha">Fecha Llamada:</label>
-            <input type="date" id="fecha"  name="contacto[fecha]" required>
-
-            <label for="hora">Hora Llamada:</label>
-            <input type="time" id="hora" min="09:00" max="18:00"  name="contacto[hora]" required>
-
-        `;
-    } else {
-        contactoDiv.innerHTML = `
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Tu Email" id="email" name="contacto[email]" required>
-        `;
-    }
 }

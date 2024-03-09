@@ -1,0 +1,16 @@
+[build]
+  command = "npx gulp"  # o el comando que uses para compilar tu proyecto
+
+[context.production.environment]
+  PHP_VERSION = "8.3.3"  # Versión de PHP que deseas utilizar
+
+[context.deploy-preview.environment]
+  PHP_VERSION = "8.3.3"  # Puedes especificar una versión diferente para las vistas previas de despliegue si es necesario
+
+[context.branch-deploy.environment]
+  PHP_VERSION = "8.3.3"  # Puedes especificar una versión diferente para las ramas de despliegue si es necesario
+
+[context.split1.environment]
+  PHP_VERSION = "8.3.3"  # Puedes especificar una versión diferente para los otros contextos si es necesario
+
+# Añade más contextos según sea necesario

@@ -1,9 +1,9 @@
-.boton-amarillo {
-    @include boton($amarillo, inline-block);
+.boton-amarillo-block {
+    @include boton($amarillo, block); //Poniendo block, ocupará todo el espacio disponible
 }
 
-.boton-amarillo-block {
-    @include boton($amarillo, block);
+.boton-amarillo {
+    @include boton($amarillo, inline-block); //Poniendo block, ocupará todo el espacio disponible
 }
 
 .boton-verde {
@@ -11,9 +11,10 @@
 }
 
 .boton-rojo-block {
-   @include boton($rojo, block);
-   width: 100%;
+    @include boton($rojo, block);
+    width: 100%;
 }
+
 .boton-verde-block {
     @include boton($verde, block);
 }

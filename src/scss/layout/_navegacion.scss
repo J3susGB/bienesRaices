@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    
     @include tablet {
         align-items: flex-end;
     }
@@ -10,8 +10,8 @@
     .dark-mode-boton {
         width: 3rem;
         margin-top: 3rem;
-        margin-bottom: 2rem;
-        filter: invert(100%);
+        margin-bottom: 3rem;
+        filter: invert(100%); //Esta propiedad invierte los colores. Como está negro, pues será blanco
 
         &:hover {
             cursor: pointer;
@@ -28,6 +28,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 3rem;
+
     @include tablet {
         flex-direction: row;
         justify-content: space-between;
@@ -36,19 +37,18 @@
 }
 
 .navegacion {
-
-    visibility: hidden;
+    visibility: hidden; //No se verá
     opacity: 0;
+    transition: visibility .3s ease-in-out, opacity .8s linear, height .5s linear;
     height: 0;
-    transition: visibility .3s ease-in-out, opacity .5s linear, height .5s linear; 
 
     @include tablet {
         display: flex;
-        align-items: center;
+        align-items: center; //Centra verticalmente los elementos
         opacity: 1;
         visibility: visible;
     }
-    
+
     a {
         color: $blanco;
         text-decoration: none;
@@ -57,23 +57,28 @@
         text-align: center;
 
         @include tablet {
-            margin-right: 2rem;
+            margin-right: 2rem; //Para separar enlaces, añade margen derecho. Ojo que al último tb le añade
             font-size: 1.8rem;
 
             &:last-of-type {
-                margin-right: 0;
+                margin-right: 0; //Quito margen al último enlace
             }
         }
+    }
 
-        &:hover {
-            color: $verde;
-        }
+    a:hover {
+        color: $verde;
     }
 }
 
 
-/** Menu de hamburguesa **/
+/** Menú Hamburguesa**/
+
 .mobile-menu {
+    &:hover {
+        cursor: pointer;
+    }
+    
     @include tablet {
         display: none;
     }
@@ -84,7 +89,13 @@
 }
 
 .mostrar {
-    visibility: visible;
+    // display: flex;
+    // flex-direction: column;
+
+    // @include tablet {
+    //     flex-direction: row;
+    // }
+    visibility: visible; //Lo mostrará
     opacity: 1;
-    height: auto;
+    height: 20rem;
 }

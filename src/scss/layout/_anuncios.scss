@@ -5,7 +5,7 @@
 }
 
 .anuncio {
-    background-color: lighten($gris, 5);
+    background-color: lighten($gris, 5); //Aclará un poco el color
     border: 1px solid darken($gris, 10);
     margin-bottom: 2rem;
 
@@ -16,8 +16,8 @@
     h3, p {
         margin: 0;
     }
- 
 }
+
 .precio {
     color: $verde;
     font-weight: $bold;
@@ -27,17 +27,18 @@
 .iconos-caracteristicas {
     display: flex;
     list-style: none;
-    padding: 0;
+    padding: 0; //Los ul agregan un padding por defecto
     max-width: 40rem;
 
     li {
-        flex: 1;
+        flex: 1; //Todos ocuparán el mismo tamaño
         display: flex;
 
         img {
-            flex:  0 0 3rem;
+            flex: 0 0 3rem;
             margin-right: 1rem;
         }
+
         p {
             font-weight: $black;
         }

@@ -1,11 +1,4 @@
-<?php 
+<?php
 
-require 'funciones.php';
-require 'config/database.php';
-require __DIR__ . '/../vendor/autoload.php';
-
-// Conectarnos a la base de datos
-$db = conectarDB();
-
-use Model\ActiveRecord;
-ActiveRecord::setDB($db);
+define('TEMPLATES_URL', __DIR__ . '/templates'); //Se define la url donde están todos los templates
+define('FUNCIONES_URL', __DIR__ . 'funciones.php'); //Se define la url donde están todas las funciones

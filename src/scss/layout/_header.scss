@@ -1,6 +1,7 @@
 .no-webp .inicio {
     background-image: url(../img/header.jpg);
 }
+
 .webp .inicio {
     background-image: url(../img/header.webp);
 }
@@ -10,7 +11,7 @@
     padding: 1rem 0 3rem 0;
 
     &.inicio {
-        background-position: center center;
+        background-position: center center; //imagen centrada horizontalmente
         background-size: cover;
 
         @include tablet {
@@ -36,5 +37,6 @@
         font-weight: $bold;
         line-height: 2;
         max-width: 60rem;
+
     }
 }
